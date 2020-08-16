@@ -1,8 +1,8 @@
 import akka.actor.{Actor, ActorSystem, Props}
 
-case class Greeting(name:String)
+case class Greeting(name: String)
 
-class GreetingActor extends Actor{
+class GreetingActor extends Actor {
 
 
   override def receive: Receive = {
@@ -14,11 +14,11 @@ class GreetingActor extends Actor{
 }
 
 
-object Home extends App{
+object Home extends App {
 
   val system = ActorSystem("greeter")
 
- val greetingsActorRef= system.actorOf(Props[GreetingActor])
+  val greetingsActorRef = system.actorOf(Props[GreetingActor])
 
   greetingsActorRef ! Greeting("Mahmoud")
 
